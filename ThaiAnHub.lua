@@ -11,7 +11,8 @@ local Window = Rayfield:CreateWindow({
 -- THÔNG BÁO DISCORD
 Rayfield:Notify({
    Title = "Hệ Thống Đã Kích Hoạt!",
-   Content = "Discord : https://discord.gg/3D3acCm9k",
+   Content = "Discord : https://discord.gg/3D3acCm9k
+ Anh em nào muốn thêm script game nào đó thì vào discord bảo mình nhé!",
    Duration = 10,
    Image = 4483362458,
    Actions = { Ignore = { Name = "OK!", Callback = function() end }, },
@@ -43,7 +44,7 @@ local function AddScript(tab, name, note, code_func)
     tab:CreateButton({ Name = name .. " [" .. note .. "]", Callback = code_func })
 end
 
--- ================= TAB SERVER (THAIAN HUB) =================
+-- ================= TAB 1: SERVER =================
 local ServerTab = Window:CreateTab("Server", 4483362458) -- Icon hình máy chủ hoặc mạng lưới
 
 -- 1. Sao chép Job ID
@@ -118,7 +119,7 @@ ServerTab:CreateInput({
    end,
 })
 
--- ================= TAB ANTI / AUTO (THAIAN HUB) =================
+-- ================= TAB 2: ANTI / AUTO =================
 local AntiTab = Window:CreateTab("Anti / Auto", 4483362458)
 
 -- 1. Anti Fling (Chống bị làm văng)
@@ -160,7 +161,7 @@ AddScript(AntiTab, "Anti-AFK", "Treo máy xuyên màn đêm", function()
     end)
 end)
 
--- ================= TAB 5: TIỆN ÍCH (CẬP NHẬT) =================
+-- ================= TAB 3: TIỆN ÍCH =================
 local UtilsTab = Window:CreateTab("Tiện Ích", 4483362458)
 UtilsTab:CreateSection("Di Chuyển")
 UtilsTab:CreateToggle({ Name = "Bật Fly", CurrentValue = false, Callback = function(v) getgenv().FlyEnabled = v end })
@@ -311,7 +312,7 @@ AddScript(UtilsTab, "Click TP", "Dùng Tool để dịch chuyển", function()
     tool.Parent = game.Players.LocalPlayer.Backpack
 end)
 
--- ================= TAB VISUALS (THAIAN HUB) =================
+-- ================= TAB 4: VISUALS =================
 
 
 local VisualTab = Window:CreateTab("Visuals", 4483362458)
@@ -363,7 +364,7 @@ VisualTab:CreateButton({
 VisualTab:CreateButton({
    Name = "Infinite Zoom",
    Callback = function()
-      game.Players.LocalPlayer.CameraMaxZoomDistance = 10000
+      game.Players.LocalPlayer.CameraMaxZoomDistance = 1000000
       Rayfield:Notify({Title = "ThaiAn Hub", Content = "Đã mở khóa Zoom!", Duration = 2})
    end,
 })
@@ -555,9 +556,7 @@ VisualTab:CreateToggle({
    end,
 })
 
--- =========================================================
--- 1. KHỞI TẠO TAB AIMBOT & ESP (GIAO DIỆN)
--- =========================================================
+-- ================= TAB 5: Aimbot & ESP =================
 local AimTab = Window:CreateTab("Aimbot & ESP", 4483362458)
 
 AimTab:CreateSection("Aimbot Thông Minh")
@@ -678,7 +677,7 @@ game:GetService("RunService").RenderStepped:Connect(function()
     end
 end)
 
--- ================= TAB 2: BLOX FRUIT (FULL) =================
+-- ================= TAB 6: BLOX FRUIT =================
 local BF_Tab = Window:CreateTab("Blox Fruit", 4483362458)
 AddScript(BF_Tab, "Teddy Hub", "Không có key", function() 
     repeat task.wait() until game:IsLoaded() and game:GetService("Players") and game.Players.LocalPlayer and game.Players.LocalPlayer:FindFirstChild("PlayerGui")
@@ -716,8 +715,35 @@ AddScript(BF_Tab, "Banana Hub(Kimpro)", "Không key", function() loadstring(game
 AddScript(BF_Tab, "Trọng Nguyễn Hub", "Không key", function() loadstring(game:HttpGet("https://raw.githubusercontent.com/trongnguyenhubbloxfruit/Cocaigidaumaphaiskid/refs/heads/main/TrongNguyenSTB.lua"))() end)
 AddScript(BF_Tab, "Doraemon Hub", "Không key", function() loadstring(game:HttpGet("https://raw.githubusercontent.com/KiddoHiru/BloxFruits/main/MasterHub.lua"))() end)
 AddScript(BF_Tab, "Hoho Hub", "Có key", function() loadstring(game:HttpGet("https://raw.githubusercontent.com/acsu123/HOHO_H/main/Loading_UI"))() end)
+AddScript(BF_Tab, "Kaitun Rip_indra", "Không key", function() getgenv().Config = {
+Bosses = {
+Farm = "rip_indra" -- "Dough King", "Darkbeard", "Tyrant of the Skies"
+}
+}
+loadstring(game:HttpGet("https://raw.githubusercontent.com/LuaAnarchist/3TOC-HUB/refs/heads/main/KaitunBoss.luau"))()
+AddScript(BF_Tab, "Kaitun Dough King", "Không key", function() getgenv().Config = {
+Bosses = {
+Farm = "Dough King" -- "Dough King", "Darkbeard", "Tyrant of the Skies"
+}
+}
+loadstring(game:HttpGet("https://raw.githubusercontent.com/LuaAnarchist/3TOC-HUB/refs/heads/main/KaitunBoss.luau"))()
+AddScript(BF_Tab, "Kaitun Darkbeard", "Không key", function() getgenv().Config = {
+Bosses = {
+Farm = "Darkbeard" -- "Dough King", "Darkbeard", "Tyrant of the Skies"
+}
+}
+loadstring(game:HttpGet("https://raw.githubusercontent.com/LuaAnarchist/3TOC-HUB/refs/heads/main/KaitunBoss.luau"))()
 
--- ================= TAB 3: THE FORGE =================
+-- ================= TAB 7: 99 nights in the forest =================
+local Night99Tab = Window:CreateTab("99 nights in the forest", 4483362458)
+AddScript(Night99Tab, "Foxname", "Không key", function() loadstring(game:HttpGet('https://raw.githubusercontent.com/caomod2077/Script/refs/heads/main/FNDayFarm.lua'))() end)
+AddScript(Night99Tab, "Voidware", "Không key", function() loadstring(game:HttpGet("https://raw.githubusercontent.com/VapeVoidware/VW-Add/main/nightsintheforest.lua", true))() end)
+AddScript(Night99Tab, "H4x", "Có key", function() loadstring(game:HttpGet("https://raw.githubusercontent.com/H4xScripts/Loader/refs/heads/main/loader2.lua", true))() end)
+AddScript(Night99Tab, "Ringta", "Không key", function() loadstring(game:HttpGet("https://raw.githubusercontent.com/wehibuyfgyuwe/99nights.github.io/refs/heads/main/ringta.lua"))() end)
+AddScript(Night99Tab, "Cps Hub", "Không key", function() loadstring(game:HttpGet("https://raw.githubusercontent.com/Rx1m/CpsHub/refs/heads/main/Hub",true))() end)
+AddScript(Night99Tab, "Overhub", "Không key", function() loadstring(game:HttpGet("https://raw.githubusercontent.com/hellattexyss/autofarmdiamonds/main/overhubaurofarm.lua"))() end)
+
+-- ================= TAB 8: THE FORGE =================
 local Forge_Tab = Window:CreateTab("The Forge", 4483362458)
 AddScript(Forge_Tab, "Catraz Hub", "Không có key", function() loadstring(game:HttpGet("https://raw.githubusercontent.com/nurvian/Catraz-HUB/refs/heads/main/Catraz/main.lua"))() end)
 AddScript(Forge_Tab, "No1 Hub", "Có key", function() loadstring(game:HttpGet("https://raw.githubusercontent.com/SkibidiHub111/Forge/refs/heads/main/No1Dev"))() end)
@@ -728,7 +754,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/LioK251/RbScripts/ref
 AddScript(Forge_Tab,  "Vxeze Hub", "Có key", function() loadstring(game:HttpGet("https://pandadevelopment.net/virtual/file/702a5c5488082e6f"))() end)
 AddScript(Forge_Tab,  "Bonk Hub", "Có key", function() loadstring(game:HttpGet("https://bonkhub.online/loader.lua",true))() end)
 
--- ================= TAB 4: MM2 =================
+-- ================= TAB 9: MM2 =================
 local MM2_Tab = Window:CreateTab("MM2", 4483362458)
 AddScript(MM2_Tab, "Capybara Hub", "Có key", function() loadstring(game:HttpGet("https://raw.githubusercontent.com/zorex321/capybara/refs/heads/main/Capybara-Hub",true))() end)
 AddScript(MM2_Tab, "Nexus Hub", "Không có key", function() loadstring(game:HttpGet("https://raw.githubusercontent.com/NexusScripts212/MurderMystery2/refs/heads/main/Mm2",true))() end)
@@ -736,93 +762,26 @@ AddScript(MM2_Tab, "Overdrive Hub", "Có key",  function() loadstring(game:HttpG
 AddScript(MM2_Tab,  "XHub", "Không có key", function() loadstring(game:HttpGet("https://raw.githubusercontent.com/bluedeal/Mm2.xhub/refs/heads/main/Mm2-KeylessV2"))() end)
 AddScript(MM2_Tab,  "Vision Hub", "Không có key", function() loadstring(game:HttpGet("https://raw.githubusercontent.com/orialdev/VisionHub/refs/heads/main/main.lua"))() end)
 
--- ================= TAB BLUE LOCK RIVALS (THAIAN HUB) =================
+-- ================= TAB 10: BLUE LOCK RIVALS =================
 local BlueLockTab = Window:CreateTab("Blue Lock", 4483362458)
+AddScript(BlueLockTab, "Control Ball", "Không key", function() loadstring(game:HttpGet("https://rawscripts.net/raw/Blue-Lock:-Rivals-Lock-Control-ball-32633"))() end)
+AddScript(BlueLockTab, "Arbix Hub", "Không key và dễ bị ban", function() loadstring(game:HttpGet("https://raw.githubusercontent.com/Youifpg/Arbix--Hub/refs/heads/main/Blue!ock.lua"))() end)
+AddScript(BlueLockTab, "Aztreon Hub", "Có key", function() loadstring(game:HttpGet("https://raw.githubusercontent.com/aal3-33/Hub/refs/heads/main/Gitscripts/aztreonhub.lua"))() end)
+AddScript(BlueLockTab, "Omg Hub", "Có key", function() loadstring(game:HttpGet('https://raw.githubusercontent.com/Omgshit/Scripts/main/MainLoader.lua'))() end)
 
--- 1. Ball Magnet (Điều khiển/Hút bóng - CỰC KHÉT)
-AddScript(BlueLockTab, "Ball Magnet", "Điều khiển bóng theo ý muốn", function()
-    Rayfield:Notify({Title = "ThaiAn Hub", Content = "Đã bật Magnet! Bóng sẽ bám theo bạn.", Duration = 3})
-    local player = game.Players.LocalPlayer
-    local runService = game:GetService("RunService")
-    
-    _G.Magnet = true
-    runService.Stepped:Connect(function()
-        if _G.Magnet then
-            pcall(function()
-                local char = player.Character
-                local root = char and char:FindFirstChild("HumanoidRootPart")
-                for _, v in pairs(game.Workspace:GetChildren()) do
-                    if v.Name == "Football" and v:IsA("BasePart") then
-                        -- Hút bóng về phía trước mặt nhân vật 3 studs
-                        local targetPos = root.CFrame * CFrame.new(0, 0, -3)
-                        v.Velocity = (targetPos.p - v.Position) * 30 -- Tăng số này để hút mạnh hơn
-                    end
-                end
-            end)
-        end
-    end)
-end)
+-- ================= TAB 11: FORSAKEN =================
+local fsaken_Tab = Window:CreateTab("Forsaken", 4483362458)
+AddScript(fsaken_Tab, "Bobby Hub", "Không key", function() loadstring(game:HttpGet("https://raw.githubusercontent.com/BobJunior1/ForsakenBoi/refs/heads/main/B0bbyHub"))() end)
+AddScript(fsaken_Tab, "Saryn Hub", "Không key", function() loadstring(game:HttpGet("https://rawscripts.net/raw/Forsaken-Saryn-Hub-40752"))() end)
+AddScript(fsaken_Tab, "Guesting Hub", "Không key", function() loadstring(game:HttpGet("https://raw.githubusercontent.com/LolnotaKid/project/refs/heads/main/AutoBLOCKKKWAHV1"))() end)
+AddScript(fsaken_Tab, "Vim Hub", "Có key", function() loadstring(game:HttpGet("https://raw.githubusercontent.com/zylosboom/ViMHub/refs/heads/main/vimHub.lua"))() end)
+AddScript(fsaken_Tab, "Sigmasaken", "Không key", function() loadstring(game:HttpGet("https://rawscripts.net/raw/Forsaken-Stamina-settings-for-forsaken-35367"))() end)
 
--- 2. Curve Kick (Sút xoáy/Điều khiển hướng sút)
-AddScript(BlueLockTab, "Curve Kick", "Sút bóng theo hướng Camera", function()
-    Rayfield:Notify({Title = "ThaiAn Hub", Content = "Đã bật Curve Kick! Sút sẽ bay theo hướng tâm giữa màn hình.", Duration = 3})
-    -- Tính năng này giúp bóng bay theo hướng Camera khi ông sút
-    local runService = game:GetService("RunService")
-    runService.RenderStepped:Connect(function()
-        pcall(function()
-            for _, v in pairs(game.Workspace:GetChildren()) do
-                if v.Name == "Football" and (v.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude < 10 then
-                    local camera = workspace.CurrentCamera
-                    v.Velocity = camera.CFrame.LookVector * 150 -- Lực sút cực mạnh theo hướng nhìn
-                end
-            end
-        end)
-    end)
-end)
-
--- 3. Rivals Stamina (Fix cho bản Rivals)
-AddScript(BlueLockTab, "Infinite Stamina", "Chạy không tốn thể lực", function()
-    Rayfield:Notify({Title = "ThaiAn Hub", Content = "Đang hack thể lực Rivals...", Duration = 3})
-    -- Rivals thường lưu stamina trong Folder 'Data' hoặc 'Stats' của Player
-    pcall(function()
-        local player = game.Players.LocalPlayer
-        local stamina = player:FindFirstChild("Stamina", true) or player.Character:FindFirstChild("Stamina", true)
-        if stamina then
-            stamina.Value = 100
-            stamina:GetPropertyChangedSignal("Value"):Connect(function()
-                stamina.Value = 100
-            end)
-        end
-    end)
-end)
-
--- 4. Reach Ball (Bản Rivals)
-AddScript(BlueLockTab, "Power Reach", "Tăng tầm cướp bóng", function()
-    Rayfield:Notify({Title = "ThaiAn Hub", Content = "Đã tăng tầm với bóng!", Duration = 3})
-    task.spawn(function()
-        while task.wait(1) do
-            for _, v in pairs(game.Workspace:GetChildren()) do
-                if v.Name == "Football" then
-                    v.Size = Vector3.new(15, 15, 15) -- Làm bóng cực to (chỉ mình ông thấy) để dễ chạm
-                    v.CanCollide = false
-                end
-            end
-        end
-    end)
-end)
-
--- 5. Auto Goal (Hướng camera vào gôn đối phương)
-AddScript(BlueLockTab, "Auto Face Goal", "Tự hướng mặt về khung thành", function()
-    Rayfield:Notify({Title = "ThaiAn Hub", Content = "Đang khóa mục tiêu gôn...", Duration = 3})
-    local player = game.Players.LocalPlayer
-    -- Tìm gôn (thường tên là Goal hoặc có Part tên Net)
-    for _, v in pairs(workspace:GetDescendants()) do
-        if v.Name == "Goal" and v:IsA("BasePart") and (v.Position - player.Character.HumanoidRootPart.Position).Magnitude > 50 then
-            player.Character.HumanoidRootPart.CFrame = CFrame.new(player.Character.HumanoidRootPart.Position, Vector3.new(v.Position.X, player.Character.HumanoidRootPart.Position.Y, v.Position.Z))
-            break
-        end
-    end
-end)
+-- ================= TAB 12: FISCH =================
+local fisch_Tab = Window:CreateTab("Fisch", 4483362458)
+AddScript(fisch_Tab, "Shield Hub", "Không key", function() loadstring(game:HttpGet("https://raw.githubusercontent.com/KAN-FISCH/tesss/refs/heads/main/gunung/fish.lua"))() end)
+AddScript(fisch_Tab, "Speed X", "Có key", function() loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua"))() end)
+AddScript(fisch_Tab, "Than Hub", "Có key", function() loadstring(game:HttpGet("https://raw.githubusercontent.com/thantzy/thanhub/refs/heads/main/thanv1"))() end)
 
 -- ================= LOGIC HỆ THỐNG =================
 local function GetClosestToMouse()
